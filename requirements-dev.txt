@@ -1,0 +1,2 @@
+# Only needed to regenerate the sample PDF in data/sample_docs/
+reportlab==5.0.0

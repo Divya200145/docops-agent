@@ -1,0 +1,11 @@
+# Install into a SEPARATE virtual environment from requirements.txt.
+# ragas pins an older langchain-core than the current LangGraph/
+# langchain-anthropic release train; installing both sets into one
+# environment produces real, unresolvable dependency conflicts.
+# See evaluation/evaluate.py docstring for details.
+ragas==0.2.15
+langchain-core==0.3.29
+langchain-anthropic==0.3.0
+pdfplumber==0.11.10
+scikit-learn==1.9.0
+datasets==5.0.1

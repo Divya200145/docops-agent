@@ -1,0 +1,18 @@
+LangGraph is a library for building stateful, multi-step applications
+with large language models, structured as a graph of nodes and edges.
+Each node is typically a function or an LLM call, and edges define how
+control flows between them, including conditional branching based on
+the current state.
+
+Unlike a simple linear chain, a LangGraph graph can loop, branch, and
+maintain a shared state object across steps. This makes it well suited
+for agentic workflows where the number of steps isn't known in
+advance: for example, an agent that keeps calling tools and
+re-evaluating whether it has enough information to answer, or a
+workflow that routes a request to different specialized handlers
+depending on its type.
+
+A common pattern is a router node that classifies the incoming request
+and then directs execution to one of several downstream nodes, each
+handling a different task such as question answering or
+summarization, before converging on a final response node.

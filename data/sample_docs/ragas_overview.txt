@@ -1,0 +1,18 @@
+RAGAS is an evaluation framework for retrieval-augmented generation
+(RAG) systems. Rather than relying on manual spot-checks of a handful
+of outputs, RAGAS computes quantitative metrics over a test set of
+questions, so changes to a RAG pipeline can be measured instead of
+eyeballed.
+
+Common RAGAS metrics include faithfulness (does the generated answer
+only contain claims supported by the retrieved context, or does it
+hallucinate details not present in the source), answer relevancy (does
+the answer actually address the question that was asked), and context
+precision or recall (did the retrieval step surface the passages that
+were actually needed to answer the question, without pulling in a lot
+of irrelevant noise).
+
+Because several of these metrics use another LLM as a judge to score
+outputs, running a RAGAS evaluation requires API access to a language
+model, in addition to the model used to generate the answers being
+evaluated.

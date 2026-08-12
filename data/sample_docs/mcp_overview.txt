@@ -1,0 +1,19 @@
+The Model Context Protocol (MCP) is an open standard for connecting AI
+applications to external tools, data sources, and systems. Instead of
+every AI application implementing its own custom integration for each
+tool, MCP defines a shared protocol: a server exposes tools, resources,
+and prompts, and any MCP-compatible client can discover and call them.
+
+An MCP server typically exposes three kinds of primitives: tools
+(functions the model can call, with typed inputs and outputs),
+resources (data the model can read, like files or database rows), and
+prompts (reusable prompt templates). This structure lets an AI agent
+request exactly the capability it needs, with a predictable schema,
+instead of relying on unstructured text parsing.
+
+The protocol uses JSON-RPC messages over a transport layer, which can
+be stdio for local processes or HTTP-based transports (SSE or
+streamable HTTP) for remote servers. Because the protocol is
+transport-agnostic, the same server logic can run locally during
+development and be deployed remotely in production with minimal
+changes.
